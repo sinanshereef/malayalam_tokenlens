@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "malayalam-tokenlens-mcp"
+version = "0.1.0"
+description = "MCP server that measures the token cost of Malayalam text across LLM tokenizers."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = ["fastmcp>=2.0", "tiktoken>=0.7"]
+
+[project.optional-dependencies]
+hf = ["tokenizers>=0.19"]
+dev = ["pytest"]
+
+[project.scripts]
+malayalam-tokenlens-mcp = "malayalam_tokenlens.server:main"
+
+[tool.setuptools]
+packages = ["malayalam_tokenlens"]
